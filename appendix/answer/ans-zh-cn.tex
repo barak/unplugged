@@ -1534,23 +1534,23 @@ $x^3 - 1 = 0$的3个根是$\{1, \dfrac{-1 \pm i \sqrt{3}}{2}\}$。伽罗瓦群�
 \begin{enumerate}
 \item {证明恒等箭头是唯一的（提示：可以参考群单位元唯一性的证明）。}
 
-假设存在另一恒等箭头$id_A'$，从$A$指向自己：$A \arrowto{id_A'} A$。
+假设存在另一恒等箭头$\id_A'$，从$A$指向自己：$A \arrowto{\id_A'} A$。
 
 考虑从$A$到$B$的任意箭头：$A \arrowto{f} B$，根据恒等箭头的性质有：
-$f \circ id_A = f$。现在我们用$A$替换$B$，用$id_A'$替换$f$，有：
+$f \circ \id_A = f$。现在我们用$A$替换$B$，用$\id_A'$替换$f$，有：
 
 \[
-id_A' \circ id_A = id_A'
+\id_A' \circ \id_A = \id_A'
 \]
 
 同理，对于任何从$B$到$A$的箭头，$B \arrowto{g} A$，根据恒等箭头的性质有：
-$id_A' \circ g = g$。现在用$A$替换$B$，用$id_A$替换$g$，有：
+$\id_A' \circ g = g$。现在用$A$替换$B$，用$\id_A$替换$g$，有：
 
 \[
-id_A' \circ id_A = id_A
+\id_A' \circ \id_A = \id_A
 \]
 
-综合这两个结果我们有$id_A = id_A'$。所以恒等箭头是唯一的。
+综合这两个结果我们有$\id_A = \id_A'$。所以恒等箭头是唯一的。
 
 \item {验证幺半群$(S, \cup, \varnothing)$（群元素是集合，二元运算是集合的并，单位元是空集）和$(N, +, 0)$（群元素是自然数，二元运算是加法，单位元是零）都是只含有一个对象的范畴。}
 
@@ -1632,10 +1632,10 @@ A \arrowto{\psi \circ \phi} C
 由于函数的组合是可结合的，故箭头也是可结合的。接下来我们验证恒等箭头：
 
 \[
-A \arrowto{id_A} A
+A \arrowto{\id_A} A
 \]
 
-它满足$id_A(z) = z$，并且$id_A \circ f = f \circ id_A$。
+它满足$\id_A(z) = z$，并且$\id_A \circ f = f \circ \id_A$。
 
 显然三元组$(\pmb{N}, succ, 0)$是皮亚诺范畴中的对象。并且有趣的是，对于任何皮亚诺范畴的对象$(A, f, z)$都存在唯一的箭头：
 
@@ -1664,9 +1664,9 @@ fmap\ f = foldr\ f\ Nil
 我们只证明$\mathbf{Maybe} \circ \mathbf{List}$仍然是函子。另一证明与此类似。任何对象$A$被映射为$\mathbf{Maybe} (\mathbf{List}\ A)$。对于箭头，我们先看恒等箭头的情况：
 
 \bre
-(\mathbf{Maybe} \circ \mathbf{List})\ id & = & \mathbf{Maybe} (\mathbf{List}\ id) & \text{函子的组合} \\
- & = & \mathbf{Maybe}\ id & \text{列表函子的恒等箭头} \\
- & = & id & \text{可能函子的恒等箭头} \\
+(\mathbf{Maybe} \circ \mathbf{List})\ \id & = & \mathbf{Maybe} (\mathbf{List}\ \id) & \text{函子的组合} \\
+ & = & \mathbf{Maybe}\ \id & \text{列表函子的恒等箭头} \\
+ & = & \id & \text{可能函子的恒等箭头} \\
 \ere
 
 然后是箭头组合：
@@ -1687,9 +1687,9 @@ fmap\ f = foldr\ f\ Nil
 仿照前一题，我们分别证明函子的组合满足恒等箭头，和箭头组合的性质即可。首先是恒等箭头性质：
 
 \bre
-(\mathbf{G} \circ \mathbf{F})\ id & = & \mathbf{G} (\mathbf{F}\ id) & \text{函子的组合} \\
- & = & \mathbf{G}\ id & \text{函子$\mathbf{F}$的恒等箭头} \\
- & = & id & \text{函子$\mathbf{G}$的恒等箭头} \\
+(\mathbf{G} \circ \mathbf{F})\ \id & = & \mathbf{G} (\mathbf{F}\ \id) & \text{函子的组合} \\
+ & = & \mathbf{G}\ \id & \text{函子$\mathbf{F}$的恒等箭头} \\
+ & = & \id & \text{函子$\mathbf{G}$的恒等箭头} \\
 \ere
 
 然后是箭头组合：
@@ -1834,7 +1834,7 @@ length\ (x:xs) = 1 + length\ xs
 [A] \arrowto{length_A} \mathbf{K}_{Int}\ A
 \]
 
-其中$\mathbf{K}_{Int}$是常函子，它将任何对象映射到$Int$，所有箭头映射为恒等箭头$id_{int}$。对于箭头$A \arrowto{f} B$，我们要证明下面的范畴图可交换。
+其中$\mathbf{K}_{Int}$是常函子，它将任何对象映射到$Int$，所有箭头映射为恒等箭头$\id_{int}$。对于箭头$A \arrowto{f} B$，我们要证明下面的范畴图可交换。
 
 \begin{center}
 \begin{tikzpicture}
@@ -1866,14 +1866,14 @@ length\ (x:xs) = 1 + length\ xs
     (m-1-2) edge node [above] {$length_A$} (m-1-3)
     (m-2-2) edge node [below] {$length_B$} (m-2-3)
     (m-1-2) edge node [left] {$\mathbf{List}(f)$} (m-2-2)
-    (m-1-3) edge node [right] {$id$} (m-2-3);
+    (m-1-3) edge node [right] {$\id$} (m-2-3);
 \end{tikzpicture}
 \end{center}
 
 也就是要证明：
 
 \[
-id \circ length_{A} = length_{B} \circ \mathbf{List}(f)
+\id \circ length_{A} = length_{B} \circ \mathbf{List}(f)
 \]
 
 即：$length_{A} = length_{B} \circ \mathbf{List}(f)$
@@ -1951,15 +1951,15 @@ p & \mapsto & \bigstar
 (\pmb{N}, succ, 0) \arrowto{\sigma} (A, f, z): \sigma(n) = f^n(z)
 \]
 
-终止对象是只有一个元素的对象$1 = (\{\bigstar\}, \bigstar, id)$。任何皮亚诺范畴的对象$(A, f, z)$到终止对象的唯一箭头是：
+终止对象是只有一个元素的对象$1 = (\{\bigstar\}, \bigstar, \id)$。任何皮亚诺范畴的对象$(A, f, z)$到终止对象的唯一箭头是：
 
 \[
 (A, f, z) \arrowto{\sigma} 1 : \sigma(a) = \bigstar
 \]
 
-\item{验证$\pmb{Exp}$的确是一个范畴，指出$id$箭头和箭头的组合。}
+\item{验证$\pmb{Exp}$的确是一个范畴，指出$\id$箭头和箭头的组合。}
 
-我们先看$id$箭头的定义$h \arrowto{id} h$，它使得下面的范畴图可交换：
+我们先看$\id$箭头的定义$h \arrowto{\id} h$，它使得下面的范畴图可交换：
 
 \begin{center}
 \begin{tikzpicture}
@@ -1968,8 +1968,8 @@ p & \mapsto & \bigstar
      A & A \times B & \\
      A & A \times B & C \\};
   \path[-stealth]
-    (m-1-1) edge node [left] {$id_A$} (m-2-1)
-    (m-1-2) edge node [left] {$id_A \times id_B$} (m-2-2)
+    (m-1-1) edge node [left] {$\id_A$} (m-2-1)
+    (m-1-2) edge node [left] {$\id_A \times \id_B$} (m-2-2)
     (m-1-2) edge node [above] {$h$} (m-2-3)
     (m-2-2) edge node [below] {$h$} (m-2-3);
 \end{tikzpicture}
@@ -1989,19 +1989,19 @@ $h \arrowto{i} k$和$k \arrowto{j} m$的组合是$j \circ i$使得下面的范�
   \path[-stealth]
     (m-1-1) edge node [left] {$f$} (m-2-1)
     (m-2-1) edge node [left] {$g$} (m-3-1)
-    (m-1-2) edge node [left] {$f \times id_B$} (m-2-2)
-    (m-2-2) edge node [left] {$g \times id_B$} (m-3-2)
+    (m-1-2) edge node [left] {$f \times \id_B$} (m-2-2)
+    (m-2-2) edge node [left] {$g \times \id_B$} (m-3-2)
     (m-1-2) edge node [above] {$h$} (m-2-3)
     (m-2-2) edge node [above] {$k$} (m-2-3)
     (m-3-2) edge node [below] {$m$} (m-2-3);
 \end{tikzpicture}
 \end{center}
 
-因此对于箭头$h \arrowto{j} k$有：$id_k \circ j = j = j \circ id_h$。并且对于三个箭头有结合律。
+因此对于箭头$h \arrowto{j} k$有：$\id_k \circ j = j = j \circ \id_h$。并且对于三个箭头有结合律。
 
-\item{反射律$curry\ apply = id$中，$id$的下标是什么？请用另一种方法证明它。}
+\item{反射律$curry\ apply = \id$中，$\id$的下标是什么？请用另一种方法证明它。}
 
-$id$的下标是二元箭头的类型$A \times B \to C$。
+$\id$的下标是二元箭头的类型$A \times B \to C$。
 
 \begin{proof}
 \blre
@@ -2009,13 +2009,13 @@ $id$的下标是二元箭头的类型$A \times B \to C$。
 = & curry\ (apply\ f)\ a\ b & \text{组合的定义} \\
 = & (apply\ f)\ (a, b) & \text{$curry$的定义}\\
 = & f(a, b) & \text{$apply$的定义} \\
-= & id_{A \times B \to C}\ f(a, b)
+= & \id_{A \times B \to C}\ f(a, b)
 \elre
 \end{proof}
 
 \item{我们称下面的等式
 \[
-(curry\ f) \circ g = curry(f \circ (g \times id))
+(curry\ f) \circ g = curry(f \circ (g \times \id))
 \]
 为柯里化的融合律。请画出它的范畴图并证明它。}
 
@@ -2029,31 +2029,31 @@ $id$的下标是二元箭头的类型$A \times B \to C$。
   \path[-stealth]
     (m-1-1) edge node [left] {$g$} (m-2-1)
     (m-2-1) edge node [left] {$curry\ f$} (m-3-1)
-    (m-1-2) edge node [left] {$g \times id$} (m-2-2)
+    (m-1-2) edge node [left] {$g \times \id$} (m-2-2)
     (m-1-2) edge [bend right] node {} (m-3-2)
-    (m-1-2) edge node [above] {$f \circ (g \times id)$} (m-3-3)
+    (m-1-2) edge node [above] {$f \circ (g \times \id)$} (m-3-3)
     (m-2-2) edge node [above] {$f$} (m-3-3)
     (m-3-2) edge node [below] {$apply$} (m-3-3);
 \end{tikzpicture}
 \end{center}
 
-观察图中$D \times B$，$A \times B$，和$C$这个三角形。我们知道$D \times B \to C$这个组合箭头为$f \circ (g \times id)$。
+观察图中$D \times B$，$A \times B$，和$C$这个三角形。我们知道$D \times B \to C$这个组合箭头为$f \circ (g \times \id)$。
 
 根据幂对象和转换箭头的定义有：
 
 \[
-apply \circ (curry\ f) \circ g = f \circ (g \times id)
+apply \circ (curry\ f) \circ g = f \circ (g \times \id)
 \]
 
 由$curry$和$apply$的泛性性质有：
 
 \[
-(curry\ f) \circ g = curry (f \circ (g \times id))
+(curry\ f) \circ g = curry (f \circ (g \times \id))
 \]
 
 \item{画出群的可逆性公理的范畴图。}
 
-可逆性公里表示为：$m \circ (id, i) = m \circ (i, id) = e$
+可逆性公里表示为：$m \circ (\id, i) = m \circ (i, \id) = e$
 
 \begin{center}
 \begin{tikzpicture}
@@ -2062,8 +2062,8 @@ apply \circ (curry\ f) \circ g = f \circ (g \times id)
      G & G \times G & G \\
      1 & G & 1 \\};
   \path[-stealth]
-    (m-1-1) edge node [above] {$(id, i)$} (m-1-2)
-    (m-1-3) edge node [above] {$(i, id)$} (m-1-2)
+    (m-1-1) edge node [above] {$(\id, i)$} (m-1-2)
+    (m-1-3) edge node [above] {$(i, \id)$} (m-1-2)
     (m-1-1) edge node [left] {} (m-2-1)
     (m-1-2) edge node [left] {$m$} (m-2-2)
     (m-1-3) edge node [left] {} (m-2-3)
@@ -2105,9 +2105,9 @@ m(a, b) = ab \\
 n(a) = -a \\
 \end{array}\]
 
-\item{F-代数范畴上的$id$箭头是什么？箭头组合是什么？}
+\item{F-代数范畴上的$\id$箭头是什么？箭头组合是什么？}
 
-从$F$-代数$(A, \alpha)$到其自身的同态映射是$id$箭头。箭头组合是$F$-态射的组合。携带对象间的箭头：$A \arrowto{f} B \arrowto{g} C$使得下面的范畴图可交换：
+从$F$-代数$(A, \alpha)$到其自身的同态映射是$\id$箭头。箭头组合是$F$-态射的组合。携带对象间的箭头：$A \arrowto{f} B \arrowto{g} C$使得下面的范畴图可交换：
 
 \begin{center}
 \begin{tikzpicture}
@@ -2198,23 +2198,23 @@ data Tree A = Nil | Br A (Tree A) (Tree A)
 \begin{enumerate}
 \item {验证从左侧叠加也可以表示为$foldr$:
 \[
-foldl\ f\ z\ xs = foldr\ (b\ g\ a \mapsto g\ (f\ a\ b))\ id\ xs\ z
+foldl\ f\ z\ xs = foldr\ (b\ g\ a \mapsto g\ (f\ a\ b))\ \id\ xs\ z
 \]}
 
 为了方便理解，我们将其改写为：
 
 \[\begin{array}{l}
-foldl\ f\ z\ xs = foldr\ step\ id\ xs\ z \\
+foldl\ f\ z\ xs = foldr\ step\ \id\ xs\ z \\
 \text{其中：} step\ x\ g\ a = g\ (f\ a\ x)
 \end{array}\]
 
 \blre
   & foldl\ f\ z\ [x_1, x_2, ..., x_n] \\
-= & (foldr\ step\ id\ [x_1, x_2, ..., x_n])\ z \\
-= & (step\ x_1 (step\ x_2 ( ... (step\ x_n\ id))) ...)\ z \\
-= & (step\ x_1 (step\ x_2 ( ... (a_n \mapsto id\ (f\ a_n\ x_n)))) ...)\ z \\
-= & (step\ x_1 (step\ x_2 ( ...(a_{n-1} \mapsto (a_n \mapsto id\ (f\ a_n\ x_n))\ (f\ a_{n-1}\ x_{n-1}))))...)\ z \\
-= & (a_1 \mapsto (a_2 \mapsto ( ... (a_n \mapsto id\ (f\ a_n\ x_n))\ (f\ a_{n-1}\ x_{n-1})) ... (f\ a_2\ x_2)) (f\ a_1\ x_1))\ z \\
+= & (foldr\ step\ \id\ [x_1, x_2, ..., x_n])\ z \\
+= & (step\ x_1 (step\ x_2 ( ... (step\ x_n\ \id))) ...)\ z \\
+= & (step\ x_1 (step\ x_2 ( ... (a_n \mapsto \id\ (f\ a_n\ x_n)))) ...)\ z \\
+= & (step\ x_1 (step\ x_2 ( ...(a_{n-1} \mapsto (a_n \mapsto \id\ (f\ a_n\ x_n))\ (f\ a_{n-1}\ x_{n-1}))))...)\ z \\
+= & (a_1 \mapsto (a_2 \mapsto ( ... (a_n \mapsto \id\ (f\ a_n\ x_n))\ (f\ a_{n-1}\ x_{n-1})) ... (f\ a_2\ x_2)) (f\ a_1\ x_1))\ z \\
 = & (a_1 \mapsto (a_2 \mapsto ( ... (a_n \mapsto f\ a_n\ x_n)\ (f\ a_{n-1}\ x_{n-1})) ... )\ (f\ a_1\ x_1))\ z \\
 = & (a_1 \mapsto (a_2 \mapsto (... (a_{n-1} \mapsto f\ (f\ a_{n-1}\ x_{n-1})\ x_n)\ ...))\ (f\ a_1\ x_1))\ z \\
 = & (a_1 \mapsto f\ (f\ (...(f\ a_1\ x_1)\ x_2)\ ...)\ x_n)\ z \\
@@ -2394,7 +2394,7 @@ eval = foldr\ (t\ ts \mapsto (f\ t) + ts)\ 0
 = & \pmb{foldr}\ (\times)\ 1\ (\pmb{build}\ (\oplus\ z \mapsto foldr\ (d\ ds \mapsto (dec\ d) \oplus ds)\ z\ t)) \\
 = & (\oplus\ z \mapsto foldr (d\ ds \mapsto (dec\ d) \oplus ds)\ z\ t)\ (\times)\ 1 & \text{融合律} \\
 = & foldr\ (d\ ds \mapsto (dec\ d) \times ds)\ 1\ t & \text{$\beta$-规约} \\
-= & foldr\ ((\times) \circ fork\ (dec, id))\ 1\ t & \text{定义$fork(f, g)\ x = (f\ x, g\ x)$} \\
+= & foldr\ ((\times) \circ fork\ (dec, \id))\ 1\ t & \text{定义$fork(f, g)\ x = (f\ x, g\ x)$} \\
 \end{array}
 }}
 \]
@@ -2402,7 +2402,7 @@ eval = foldr\ (t\ ts \mapsto (f\ t) + ts)\ 0
 接着把这个结果代入之前的$f$，得到最终化简的结果：
 
 \[
-eval = foldr\ (t\ ts \mapsto (foldr\ ((\times) \circ fork\ (dec, id))\ 1\ t) + ts)\ 0
+eval = foldr\ (t\ ts \mapsto (foldr\ ((\times) \circ fork\ (dec, \id))\ 1\ t) + ts)\ 0
 \]
 
 \item{如何从左侧扩展出所有的算式？}

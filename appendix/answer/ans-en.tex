@@ -1555,21 +1555,21 @@ Obviously, $\{1\}$ is the normal subgroup of $C_4$. The quotient group $C_4/\{1\
 \begin{enumerate}
 \item {Prove that the identity arrow is unique (hint: refer to the uniqueness of identity element for groups in previous chapter).}
 
-Suppose there exists another identity arrow $id_A'$, pointed $A$ from itself: $A \arrowto{id_A'} A$.
+Suppose there exists another identity arrow $\id_A'$, pointed $A$ from itself: $A \arrowto{\id_A'} A$.
 
-Consider every arrow from $A$ to $B$: $A \arrowto{f} B$, from the definition of identity arrow, $f \circ id_A = f$ holds. When replace $B$ with $A$, and replace $f$ with $id_A'$, then:
-
-\[
-id_A' \circ id_A = id_A'
-\]
-
-Similar, for every arrow from $B$ to $A$: $B \arrowto{g} A$, according to the definition of identity arrow, $id_A' \circ g = g$ holds. When replace $B$ with $A$, replace $g$ with $id_A$, then:
+Consider every arrow from $A$ to $B$: $A \arrowto{f} B$, from the definition of identity arrow, $f \circ \id_A = f$ holds. When replace $B$ with $A$, and replace $f$ with $\id_A'$, then:
 
 \[
-id_A' \circ id_A = id_A
+\id_A' \circ \id_A = \id_A'
 \]
 
-Summarize these two result, we obtain $id_A = id_A'$, hence the identity arrow is unique.
+Similar, for every arrow from $B$ to $A$: $B \arrowto{g} A$, according to the definition of identity arrow, $\id_A' \circ g = g$ holds. When replace $B$ with $A$, replace $g$ with $\id_A$, then:
+
+\[
+\id_A' \circ \id_A = \id_A
+\]
+
+Summarize these two result, we obtain $\id_A = \id_A'$, hence the identity arrow is unique.
 
 \item {Verify the monoid $(S, \cup, \varnothing)$ (the elements are sets, the binary operation is set union, the identity element is empty set) and $(N, +, 0)$ (elements are natural numbers, the binary operation is add, the identity element is zero) are all categories that contain only one object.}
 
@@ -1653,10 +1653,10 @@ A \arrowto{\psi \circ \phi} C
 Because function composition is associative, hence arrow composition is associative. For identity arrow:
 
 \[
-A \arrowto{id_A} A
+A \arrowto{\id_A} A
 \]
 
-It satisfies $id_A(z) = z$, and $id_A \circ f = f \circ id_A$.
+It satisfies $\id_A(z) = z$, and $\id_A \circ f = f \circ \id_A$.
 
 Obviously, the tuple $(\pmb{N}, succ, 0)$ is an object in Peano category. It's interesting that, for every object $(A, f, z)$ in Peano category, there is a unique arrow:
 
@@ -1685,9 +1685,9 @@ fmap\ f = foldr\ f\ Nil
 We only prove $\mathbf{Maybe} \circ \mathbf{List}$ is a functor. The other proof is similar. Any object $A$ is sent to $\mathbf{Maybe} (\mathbf{List}\ A)$. For arrows, let us first see the case of identity arrow:
 
 \bre
-(\mathbf{Maybe} \circ \mathbf{List})\ id & = & \mathbf{Maybe} (\mathbf{List}\ id) & \text{functor composition} \\
- & = & \mathbf{Maybe}\ id & \text{identity arrow for list functor} \\
- & = & id & \text{identity arrow for maybe functor} \\
+(\mathbf{Maybe} \circ \mathbf{List})\ \id & = & \mathbf{Maybe} (\mathbf{List}\ \id) & \text{functor composition} \\
+ & = & \mathbf{Maybe}\ \id & \text{identity arrow for list functor} \\
+ & = & \id & \text{identity arrow for maybe functor} \\
 \ere
 
 Next is about arrow composition:
@@ -1704,9 +1704,9 @@ Next is about arrow composition:
 Similar to previous exercise, we need prove functor composition satisfies identity arrow and arrow composition. First for identity arrow:
 
 \bre
-(\mathbf{G} \circ \mathbf{F})\ id & = & \mathbf{G} (\mathbf{F}\ id) & \text{functor composition} \\
- & = & \mathbf{G}\ id & \text{identity arrow for functor $\mathbf{F}$} \\
- & = & id & \text{identity arrow for functor $\mathbf{G}$} \\
+(\mathbf{G} \circ \mathbf{F})\ \id & = & \mathbf{G} (\mathbf{F}\ \id) & \text{functor composition} \\
+ & = & \mathbf{G}\ \id & \text{identity arrow for functor $\mathbf{F}$} \\
+ & = & \id & \text{identity arrow for functor $\mathbf{G}$} \\
 \ere
 
 Then for arrow composition:
@@ -1852,7 +1852,7 @@ For any object $A$, the arrow $length$ indexed by $A$ is:
 [A] \arrowto{length_A} \mathbf{K}_{Int}\ A
 \]
 
-where $\mathbf{K}_{Int}$ is constant functor. It sends every object to $Int$, and sends every arrow to identity arrow $id_{int}$. For arrow $A \arrowto{f} B$, we need prove below diagram commutes.
+where $\mathbf{K}_{Int}$ is constant functor. It sends every object to $Int$, and sends every arrow to identity arrow $\id_{int}$. For arrow $A \arrowto{f} B$, we need prove below diagram commutes.
 
 \begin{center}
 \begin{tikzpicture}
@@ -1884,14 +1884,14 @@ From the definition of constant functor, this diagram is equivalent to:
     (m-1-2) edge node [above] {$length_A$} (m-1-3)
     (m-2-2) edge node [below] {$length_B$} (m-2-3)
     (m-1-2) edge node [left] {$\mathbf{List}(f)$} (m-2-2)
-    (m-1-3) edge node [right] {$id$} (m-2-3);
+    (m-1-3) edge node [right] {$\id$} (m-2-3);
 \end{tikzpicture}
 \end{center}
 
 We are about to prove:
 
 \[
-id \circ length_{A} = length_{B} \circ \mathbf{List}(f)
+\id \circ length_{A} = length_{B} \circ \mathbf{List}(f)
 \]
 
 Which means: $length_{A} = length_{B} \circ \mathbf{List}(f)$
@@ -1969,15 +1969,15 @@ The initial object is $(\pmb{N}, succ, 0)$. There is unique arrow from it to any
 (\pmb{N}, succ, 0) \arrowto{\sigma} (A, f, z): \sigma(n) = f^n(z)
 \]
 
-The final object is a singleton $1 = (\{\bigstar\}, \bigstar, id)$. There is unique arrow from any object $(A, f, z)$ to the final object:
+The final object is a singleton $1 = (\{\bigstar\}, \bigstar, \id)$. There is unique arrow from any object $(A, f, z)$ to the final object:
 
 \[
 (A, f, z) \arrowto{\sigma} 1 : \sigma(a) = \bigstar
 \]
 
-\item{Verify that $\pmb{Exp}$ is a category. What is the $id$ arrow and arrow composition in it?}
+\item{Verify that $\pmb{Exp}$ is a category. What is the $\id$ arrow and arrow composition in it?}
 
-Let us first verify the $id$ arrow $h \arrowto{id} h$, such that the following diagram commutes:
+Let us first verify the $\id$ arrow $h \arrowto{\id} h$, such that the following diagram commutes:
 
 \begin{center}
 \begin{tikzpicture}
@@ -1986,8 +1986,8 @@ Let us first verify the $id$ arrow $h \arrowto{id} h$, such that the following d
      A & A \times B & \\
      A & A \times B & C \\};
   \path[-stealth]
-    (m-1-1) edge node [left] {$id_A$} (m-2-1)
-    (m-1-2) edge node [left] {$id_A \times id_B$} (m-2-2)
+    (m-1-1) edge node [left] {$\id_A$} (m-2-1)
+    (m-1-2) edge node [left] {$\id_A \times \id_B$} (m-2-2)
     (m-1-2) edge node [above] {$h$} (m-2-3)
     (m-2-2) edge node [below] {$h$} (m-2-3);
 \end{tikzpicture}
@@ -2007,19 +2007,19 @@ The composition of $h \arrowto{i} k$ and $k \arrowto{j} m$ is $j \circ i$ such t
   \path[-stealth]
     (m-1-1) edge node [left] {$f$} (m-2-1)
     (m-2-1) edge node [left] {$g$} (m-3-1)
-    (m-1-2) edge node [left] {$f \times id_B$} (m-2-2)
-    (m-2-2) edge node [left] {$g \times id_B$} (m-3-2)
+    (m-1-2) edge node [left] {$f \times \id_B$} (m-2-2)
+    (m-2-2) edge node [left] {$g \times \id_B$} (m-3-2)
     (m-1-2) edge node [above] {$h$} (m-2-3)
     (m-2-2) edge node [above] {$k$} (m-2-3)
     (m-3-2) edge node [below] {$m$} (m-2-3);
 \end{tikzpicture}
 \end{center}
 
-For arrow $h \arrowto{j} k$, it means $id_k \circ j = j = j \circ id_h$ holds. And the associative law hold for any three arrows.
+For arrow $h \arrowto{j} k$, it means $\id_k \circ j = j = j \circ \id_h$ holds. And the associative law hold for any three arrows.
 
-\item{In the reflection law $curry\ apply = id$, what is the subscript of the $id$ arrow? Please prove it with another method.}
+\item{In the reflection law $curry\ apply = \id$, what is the subscript of the $\id$ arrow? Please prove it with another method.}
 
-The subscript of the $id$ arrow is the type of the binary arrow: $A \times B \to C$.
+The subscript of the $\id$ arrow is the type of the binary arrow: $A \times B \to C$.
 
 \begin{proof}
 \blre
@@ -2027,13 +2027,13 @@ The subscript of the $id$ arrow is the type of the binary arrow: $A \times B \to
 = & curry\ (apply\ f)\ a\ b & \text{definition of composition} \\
 = & (apply\ f)\ (a, b) & \text{definition of $curry$}\\
 = & f(a, b) & \text{definition of $apply$} \\
-= & id_{A \times B \to C}\ f(a, b)
+= & \id_{A \times B \to C}\ f(a, b)
 \elre
 \end{proof}
 
 \item{We define the equation
 \[
-(curry\ f) \circ g = curry(f \circ (g \times id))
+(curry\ f) \circ g = curry(f \circ (g \times \id))
 \]
 as the fusion law for Currying. Draw the diagram and prove it.}
 
@@ -2047,31 +2047,31 @@ as the fusion law for Currying. Draw the diagram and prove it.}
   \path[-stealth]
     (m-1-1) edge node [left] {$g$} (m-2-1)
     (m-2-1) edge node [left] {$curry\ f$} (m-3-1)
-    (m-1-2) edge node [left] {$g \times id$} (m-2-2)
+    (m-1-2) edge node [left] {$g \times \id$} (m-2-2)
     (m-1-2) edge [bend right] node {} (m-3-2)
-    (m-1-2) edge node [above] {$f \circ (g \times id)$} (m-3-3)
+    (m-1-2) edge node [above] {$f \circ (g \times \id)$} (m-3-3)
     (m-2-2) edge node [above] {$f$} (m-3-3)
     (m-3-2) edge node [below] {$apply$} (m-3-3);
 \end{tikzpicture}
 \end{center}
 
-Observe the triangle of $D \times B$, $A \times B$, and $C$. We know the arrow of $D \times B \to C$ is $f \circ (g \times id)$.
+Observe the triangle of $D \times B$, $A \times B$, and $C$. We know the arrow of $D \times B \to C$ is $f \circ (g \times \id)$.
 
 According to the definition of exponentials and transpose arrow, we have:
 
 \[
-apply \circ (curry\ f) \circ g = f \circ (g \times id)
+apply \circ (curry\ f) \circ g = f \circ (g \times \id)
 \]
 
 According to the universal property of $curry$ and $apply$:
 
 \[
-(curry\ f) \circ g = curry (f \circ (g \times id))
+(curry\ f) \circ g = curry (f \circ (g \times \id))
 \]
 
 \item{Draw the diagram to illustrate the reverse element axiom for group.}
 
-The reverse element axiom can be formalized as: $m \circ (id, i) = m \circ (i, id) = e$
+The reverse element axiom can be formalized as: $m \circ (\id, i) = m \circ (i, \id) = e$
 
 \begin{center}
 \begin{tikzpicture}
@@ -2080,8 +2080,8 @@ The reverse element axiom can be formalized as: $m \circ (id, i) = m \circ (i, i
      G & G \times G & G \\
      1 & G & 1 \\};
   \path[-stealth]
-    (m-1-1) edge node [above] {$(id, i)$} (m-1-2)
-    (m-1-3) edge node [above] {$(i, id)$} (m-1-2)
+    (m-1-1) edge node [above] {$(\id, i)$} (m-1-2)
+    (m-1-3) edge node [above] {$(i, \id)$} (m-1-2)
     (m-1-1) edge node [left] {} (m-2-1)
     (m-1-2) edge node [left] {$m$} (m-2-2)
     (m-1-3) edge node [left] {} (m-2-3)
@@ -2125,9 +2125,9 @@ m(a, b) = ab \\
 n(a) = -a \\
 \end{array}\]
 
-\item{What is the $id$ arrow for F-algebra category? What is the arrow composition?}
+\item{What is the $\id$ arrow for F-algebra category? What is the arrow composition?}
 
-The $id$ arrow is the homomorphism from $F$-algebra $(A, \alpha)$ to itself. The arrow composition is the composition of $F$-morphisms. The arrow between carrier object $A \arrowto{f} B \arrowto{g} C$ makes the following diagram commute:
+The $\id$ arrow is the homomorphism from $F$-algebra $(A, \alpha)$ to itself. The arrow composition is the composition of $F$-morphisms. The arrow between carrier object $A \arrowto{f} B \arrowto{g} C$ makes the following diagram commute:
 
 \begin{center}
 \begin{tikzpicture}
@@ -2214,23 +2214,23 @@ Hence $\mathbf{Tree}\ A = \mathbf{Fix}\ (\mathbf{TreeF}\ A)$. The initial algebr
 \begin{enumerate}
 \item{Verify that folding from left can also be defined with $foldr$:
 \[
-foldl\ f\ z\ xs = foldr\ (b\ g\ a \mapsto g\ (f\ a\ b))\ id\ xs\ z
+foldl\ f\ z\ xs = foldr\ (b\ g\ a \mapsto g\ (f\ a\ b))\ \id\ xs\ z
 \]}
 
 To make it easy, we rewrite it to:
 
 \[\begin{array}{l}
-foldl\ f\ z\ xs = foldr\ step\ id\ xs\ z \\
+foldl\ f\ z\ xs = foldr\ step\ \id\ xs\ z \\
 \text{where}: step\ x\ g\ a = g\ (f\ a\ x)
 \end{array}\]
 
 \blre
   & foldl\ f\ z\ [x_1, x_2, ..., x_n] \\
-= & (foldr\ step\ id\ [x_1, x_2, ..., x_n])\ z \\
-= & (step\ x_1 (step\ x_2 ( ... (step\ x_n\ id))) ...)\ z \\
-= & (step\ x_1 (step\ x_2 ( ... (a_n \mapsto id\ (f\ a_n\ x_n)))) ...)\ z \\
-= & (step\ x_1 (step\ x_2 ( ...(a_{n-1} \mapsto (a_n \mapsto id\ (f\ a_n\ x_n))\ (f\ a_{n-1}\ x_{n-1}))))...)\ z \\
-= & (a_1 \mapsto (a_2 \mapsto ( ... (a_n \mapsto id\ (f\ a_n\ x_n))\ (f\ a_{n-1}\ x_{n-1})) ... (f\ a_2\ x_2)) (f\ a_1\ x_1))\ z \\
+= & (foldr\ step\ \id\ [x_1, x_2, ..., x_n])\ z \\
+= & (step\ x_1 (step\ x_2 ( ... (step\ x_n\ \id))) ...)\ z \\
+= & (step\ x_1 (step\ x_2 ( ... (a_n \mapsto \id\ (f\ a_n\ x_n)))) ...)\ z \\
+= & (step\ x_1 (step\ x_2 ( ...(a_{n-1} \mapsto (a_n \mapsto \id\ (f\ a_n\ x_n))\ (f\ a_{n-1}\ x_{n-1}))))...)\ z \\
+= & (a_1 \mapsto (a_2 \mapsto ( ... (a_n \mapsto \id\ (f\ a_n\ x_n))\ (f\ a_{n-1}\ x_{n-1})) ... (f\ a_2\ x_2)) (f\ a_1\ x_1))\ z \\
 = & (a_1 \mapsto (a_2 \mapsto ( ... (a_n \mapsto f\ a_n\ x_n)\ (f\ a_{n-1}\ x_{n-1})) ... )\ (f\ a_1\ x_1))\ z \\
 = & (a_1 \mapsto (a_2 \mapsto (... (a_{n-1} \mapsto f\ (f\ a_{n-1}\ x_{n-1})\ x_n)\ ...))\ (f\ a_1\ x_1))\ z \\
 = & (a_1 \mapsto f\ (f\ (...(f\ a_1\ x_1)\ x_2)\ ...)\ x_n)\ z \\
@@ -2415,7 +2415,7 @@ Next we simplify the $product \circ (map\ dec)$ part
 = & \pmb{foldr}\ (\times)\ 1\ (\pmb{build}\ (\oplus\ z \mapsto foldr\ (d\ ds \mapsto (dec\ d) \oplus ds)\ z\ t)) \\
 = & (\oplus\ z \mapsto foldr (d\ ds \mapsto (dec\ d) \oplus ds)\ z\ t)\ (\times)\ 1 & \text{fusion law} \\
 = & foldr\ (d\ ds \mapsto (dec\ d) \times ds)\ 1\ t & \text{$\beta$-reduction} \\
-= & foldr\ ((\times) \circ fork\ (dec, id))\ 1\ t & \text{let $fork(f, g)\ x = (f\ x, g\ x)$} \\
+= & foldr\ ((\times) \circ fork\ (dec, \id))\ 1\ t & \text{let $fork(f, g)\ x = (f\ x, g\ x)$} \\
 \end{array}
 }}
 \]
@@ -2423,7 +2423,7 @@ Next we simplify the $product \circ (map\ dec)$ part
 Substitute this to $f$, we obtain the final simplified result:
 
 \[
-eval = foldr\ (t\ ts \mapsto (foldr\ ((\times) \circ fork\ (dec, id))\ 1\ t) + ts)\ 0
+eval = foldr\ (t\ ts \mapsto (foldr\ ((\times) \circ fork\ (dec, \id))\ 1\ t) + ts)\ 0
 \]
 
 \item{How to expand all expressions from left?}

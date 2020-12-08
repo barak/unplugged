@@ -651,7 +651,7 @@ foldr\ f\ z\ (g\ (:)\ []) = g\ f\ z & \text{用$f, z$替换$a$} \\
 \begin{Exercise}
 \Question{验证从左侧叠加也可以表示为$foldr$:
 \[
-foldl\ f\ z\ xs = foldr\ (b\ g\ a \mapsto g\ (f\ a\ b))\ id\ xs\ z
+foldl\ f\ z\ xs = foldr\ (b\ g\ a \mapsto g\ (f\ a\ b))\ \id\ xs\ z
 \]}
 \Question{证明以下列表的构建——叠加形式：
 \[
@@ -737,7 +737,7 @@ eval = sum \circ map\ (product \circ (map\ dec))
 明显这一定义可以用上一节介绍的融合律进行优化，我们把具体的推导过程留作练习。最终的优化结果如下：
 
 \[
-eval = foldr\ (t\ ts \mapsto (foldr\ ((\times) \circ fork(dec, id))\ 1\ t) + ts)\ 0
+eval = foldr\ (t\ ts \mapsto (foldr\ ((\times) \circ fork(dec, \id))\ 1\ t) + ts)\ 0
 \]
 
 其中$fork(f, g)\ x = (f\ x, g\ x)$，它将两个函数分别应用到一个变量上，然后将结果组成一对值。从这一结果可以写出一个可读性与性能都更好的定义：

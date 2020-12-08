@@ -150,7 +150,7 @@ A category $\pmb{C}$ consists of a collection of objects\footnote{It has nothing
 \begin{itemize}
 \item Two total operations\footnote{Total operation is defined for every object without exception. Its counterpart is partial operation, which is not defined from some objects. For example, the negate $x \mapsto -x$ is total operation for natural numbers, while the inverse operation $x \mapsto 1/x$ is not defined for 0, hence it is a partial operation.}, called source and target\footnote{They should be treated as verb, which means assign source object as... and assign target object as...}. They assign source and target objects to an arrow. Denoted as $A \arrowto{f} B$. It means the source of arrow $f$ is $A$, and the target is $B$;
 
-\item The third total operation is called identity arrow\footnote{Similarly, identity arrow should be treated as verb, which means assign the identity arrow as...}. For every object $A$, the identity arrow points to $A$ itself. Denoted as $A \arrowto{id_A} A$;
+\item The third total operation is called identity arrow\footnote{Similarly, identity arrow should be treated as verb, which means assign the identity arrow as...}. For every object $A$, the identity arrow points to $A$ itself. Denoted as $A \arrowto{\id_A} A$;
 
 \item The fourth operation is a partial operation, called composition. It composes two arrows. Given arrows $B \arrowto{f} C$ and $A \arrowto{g} B$, the composite of $f$ and $g$ is $f \circ g$, read as `$f$ after $g$'. It means $A \arrowto{f \circ g} C$.
 
@@ -166,7 +166,7 @@ f \circ (g \circ h) = (f \circ g) \circ h
 holds. We can write it as $f\ g\ h$.
 \item \textbf{Identity element}: The identity arrow is the identity element for the composition. For every arrow $A \arrowto{f} B$, equations:
 \[
-f \circ id_A = f = id_B \circ f
+f \circ \id_A = f = \id_B \circ f
 \]
 hold.
 \end{itemize}
@@ -248,7 +248,7 @@ It means first prepend prefix `hi', then prepend prefix `hello'. It's easy to ve
 For monoid, we see both the category $\pmb{Mon}$, that contains all the monoids in the universe, and the category with only one monoid. It is like a hidden world in a piece of sand. What's more interesting, for any object $A$ in a category $\pmb{C}$, define set $hom(A, A)$ as all the arrows from $A$ to $A$ itself. Then this set of arrows forms a monoid under composite operation, where the identity element is the identity arrow. Such symmetry emerges surprisingly.
 
 \index{Category of sets under total functions}
-Our second example is set. Let every set be an object\footnote{Whenever consider the set of all sets, it ends up of Russel's paradox `the set all sets that does not contain itself'. We'll revisit Russel's paradox in chapter 7.}, the arrow is a function (or map) from one set $A$ to another set $B$. We call $A$ the domain of definition, and $B$ is the domain of the function value\footnote{It is total function, which can be applied to every elements in domain $A$.}. The composition is function composite. For functions $y = f(x)$ and $z = g(y)$, their composition is $z = (g \circ f)(x) = g(f(x))$. It's easy to verify that function composition is associative. The identity element is the identity function $id(x) = x$. Hence we obtain the category $\pmb{Set}$ of all sets and functions.
+Our second example is set. Let every set be an object\footnote{Whenever consider the set of all sets, it ends up of Russel's paradox `the set all sets that does not contain itself'. We'll revisit Russel's paradox in chapter 7.}, the arrow is a function (or map) from one set $A$ to another set $B$. We call $A$ the domain of definition, and $B$ is the domain of the function value\footnote{It is total function, which can be applied to every elements in domain $A$.}. The composition is function composite. For functions $y = f(x)$ and $z = g(y)$, their composition is $z = (g \circ f)(x) = g(f(x))$. It's easy to verify that function composition is associative. The identity element is the identity function $\id(x) = x$. Hence we obtain the category $\pmb{Set}$ of all sets and functions.
 
 \index{partial order set} \index{poset}
 \index{pre-order set} \index{preset}
@@ -387,7 +387,7 @@ We often use $\mathbf{F}$ to denote functor. Since functor likes the morphism fo
 \item Any identity arrow in one category is transformed to identity arrow in another category. As shown in below figure:
 
 \[
-A \arrowto{id} A \quad \longmapsto \quad \mathbf{F}A \arrowto{id} \mathbf{F}A
+A \arrowto{\id} A \quad \longmapsto \quad \mathbf{F}A \arrowto{\id} \mathbf{F}A
 \]
 
 \index{covariance} \index{contravariance}
@@ -428,10 +428,10 @@ In summary, functor preserves identity morphisms and composition of morphisms. F
 \end{wrapfigure}
 
 \index{functor!identity functor} \index{functor!id functor}
-Let's use some examples to understand functor. If a functor maps a category to itself, it is called {\em endo-functor}\footnote{Similar to the automorphism in abstract algebra, which we introduced in previous chapter.}. The simplest functor is the identity functor, which is an endo-functor, denoted as $id: \pmb{C} \to \pmb{C}$. It can be applied to any category, maps object $A$ to $A$, and maps arrow $f$ to $f$.
+Let's use some examples to understand functor. If a functor maps a category to itself, it is called {\em endo-functor}\footnote{Similar to the automorphism in abstract algebra, which we introduced in previous chapter.}. The simplest functor is the identity functor, which is an endo-functor, denoted as $\id: \pmb{C} \to \pmb{C}$. It can be applied to any category, maps object $A$ to $A$, and maps arrow $f$ to $f$.
 
 \index{functor!constant functor}
-The second simplest functor is the constant functor. It acts like a blackhole. We denote it as $\mathbf{K}_B : \pmb{C} \to \pmb{B}$. It can be applied to any category, maps all objects to the blackhole object $B$, and maps all arrows to the identity arrow in the blackhole $id_B$. The blackhole category has only one identity arrow, it also satisfy the arrow composition condition: $id_B \circ id_B = id_B$.
+The second simplest functor is the constant functor. It acts like a blackhole. We denote it as $\mathbf{K}_B : \pmb{C} \to \pmb{B}$. It can be applied to any category, maps all objects to the blackhole object $B$, and maps all arrows to the identity arrow in the blackhole $\id_B$. The blackhole category has only one identity arrow, it also satisfy the arrow composition condition: $\id_B \circ \id_B = \id_B$.
 
 \begin{example}
 \normalfont
@@ -579,23 +579,23 @@ We can consider there are two worlds in above diagram. The bottom is the world o
 
 \[
 \begin{array}{l}
-fmap\ id = id \\
+fmap\ \id = \id \\
 fmap\ (f \circ g) = fmap\ f \circ fmap\ g
 \end{array}
 \]
 
-For the first condition, the definition of $id$ is:
+For the first condition, the definition of $\id$ is:
 
 \[
-id\ x = x
+\id\ x = x
 \]
 
 Therefore:
 
 \[
 \begin{array}{rcll}
-fmap\ id\ Nothing & = & Nothing & \text{definition of $fmap$} \\
-                  & = & id\ Nothing & \text{reverse of $id$} \\
+fmap\ \id\ Nothing & = & Nothing & \text{definition of $fmap$} \\
+                  & = & \id\ Nothing & \text{reverse of $\id$} \\
 \end{array}
 \]
 
@@ -603,9 +603,9 @@ And
 
 \[
 \begin{array}{rcll}
-fmap\ id\ (Just\ x) & = & Just\ (id\ x) & \text{definition of $fmap$} \\
-                    & = & Just\ x & \text{definition of $id$} \\
-                    & = & id\ (Just\ x) & \text{reverse of $id$}
+fmap\ \id\ (Just\ x) & = & Just\ (\id\ x) & \text{definition of $fmap$} \\
+                    & = & Just\ x & \text{definition of $\id$} \\
+                    & = & \id\ (Just\ x) & \text{reverse of $\id$}
 \end{array}
 \]
 
@@ -722,7 +722,7 @@ At the end of this example, let's verify the arrow mapping for list functor pres
 
 \[
 \begin{array}{l}
-fmap\ id = id \\
+fmap\ \id = \id \\
 fmap\ (f \circ g) = fmap\ f \circ fmap\ g
 \end{array}
 \]
@@ -732,19 +732,19 @@ We use mathematical induction to verify the identity condition. First for empty 
 
 \[
 \begin{array}{rcll}
-fmap\ id\ Nil & = & Nil & \text{definition of $fmap$} \\
-              & = & id\ Nil & \text{reverse of $id$} \\
+fmap\ \id\ Nil & = & Nil & \text{definition of $fmap$} \\
+              & = & \id\ Nil & \text{reverse of $\id$} \\
 \end{array}
 \]
 
-For the recursive case of $(x:xs)$, assume $fmap\ id\ xs = id\ xs$ holds, we have:
+For the recursive case of $(x:xs)$, assume $fmap\ \id\ xs = \id\ xs$ holds, we have:
 
 \[
 \begin{array}{rcll}
-fmap\ id\ (x:xs) & = & (id\ x):(fmap\ id\ xs) & \text{definition of $fmap$} \\
-                 & = & (id\ x):(id\ xs) & \text{induction assumption} \\
-                 & = & x:xs & \text{definition of $id$} \\
-                 & = & id\ (x:xs) & \text{reverse of $id$}
+fmap\ \id\ (x:xs) & = & (\id\ x):(fmap\ \id\ xs) & \text{definition of $fmap$} \\
+                 & = & (\id\ x):(\id\ xs) & \text{induction assumption} \\
+                 & = & x:xs & \text{definition of $\id$} \\
+                 & = & \id\ (x:xs) & \text{reverse of $\id$}
 \end{array}
 \]
 
@@ -1039,13 +1039,13 @@ Hence $m$ must be identity arrow. The diagram then simplifies to:
     % left
     (m-2-1) edge node [above] {$p_A$} (m-1-2)
     (m-2-1) edge node [below] {$p_B$} (m-3-2)
-    (m-2-1) edge node [above] {$id_S$} (m-2-2)
+    (m-2-1) edge node [above] {$\id_S$} (m-2-2)
     (m-2-2) edge node [right] {$p_A$} (m-1-2)
     (m-2-2) edge node [right] {$p_B$} (m-3-2)
     % right
     (m-1-4) edge node [above] {$i_A$} (m-2-5)
     (m-3-4) edge node [below] {$i_B$} (m-2-5)
-    (m-2-4) edge node [above] {$id_S$} (m-2-5)
+    (m-2-4) edge node [above] {$\id_S$} (m-2-5)
     (m-1-4) edge node [right] {$i_A$} (m-2-4)
     (m-3-4) edge node [right] {$i_B$} (m-2-4);
 \end{tikzpicture}
@@ -1193,7 +1193,7 @@ snd \circ \langle f, g \rangle = g
 For product, if arrow $f$ equals to $fst$, and arrow $g$ equals to $snd$, then we obtain the special case of identity arrow mentioned in previous section. Similarly for the coproduct, if arrow $f$ equals to $left$, and arrow $g$ equals to $right$, then the mediator arrow is also the identity arrow. We call this property the {\em reflection law}:
 
 \[
-id = \langle fst, snd \rangle \quad \quad \quad id = [left, right]
+\id = \langle fst, snd \rangle \quad \quad \quad \id = [left, right]
 \]
 
 If there exists another wedge $Y$ and arrows $h$ and $k$, together with $f, g$ they satisfy the following conditions:
@@ -1309,7 +1309,7 @@ We need verify the bifunctor satisfies the two conditions as a functor: the iden
 
 \[
 \begin{array}{l}
-\mathbf{F}(id \times id) = id \\
+\mathbf{F}(\id \times \id) = \id \\
 \mathbf{F}((f \circ f') \times (g \circ g')) = \mathbf{F}(f \times g) \circ \mathbf{F} (f' \times g')
 \end{array}
 \]
@@ -1319,7 +1319,7 @@ We treat the product as an object. If we prove the following two conditions esse
 
 \[
 \begin{array}{l}
-id \times id = id \\
+\id \times \id = \id \\
 (f \circ f') \times (g \circ g') = (f \times g) \circ (f' \times g')
 \end{array}
 \]
@@ -1328,9 +1328,9 @@ We start from proving the identity condition. For all $(a, b) \in A \times B$, w
 
 \[
 \begin{array}{rcll}
-(id \times id)(a, b) & = & (id(a), id(b)) & \text{product of arrows} \\
-                     & = & (a, b) & \text{definition of $id$} \\
-                     & = & id(a, b) & \text{reverse of $id$} \\
+(\id \times \id)(a, b) & = & (\id(a), \id(b)) & \text{product of arrows} \\
+                     & = & (a, b) & \text{definition of $\id$} \\
+                     & = & \id(a, b) & \text{reverse of $\id$} \\
 \end{array}
 \]
 
@@ -1376,22 +1376,22 @@ f + g = [left \circ f, right \circ g]
 \]
 
 \begin{mdframed}
-We need verify the two functor conditions, \textbf{Readers can skip the proof in this box}. For the identity condition. Substitute $f, g$ with $id$:
+We need verify the two functor conditions, \textbf{Readers can skip the proof in this box}. For the identity condition. Substitute $f, g$ with $\id$:
 
 \[
 \begin{array}{lr}
   \begin{array}{cll}
-    & id \times id & \\
-  = & \langle id \circ fst, id \circ snd \rangle & \text{Definition of $\times$} \\
-  = & \langle fst, snd \rangle & \text{Definition of $id$} \\
-  = & id & \text{Reflection law} \\
+    & \id \times \id & \\
+  = & \langle \id \circ fst, \id \circ snd \rangle & \text{Definition of $\times$} \\
+  = & \langle fst, snd \rangle & \text{Definition of $\id$} \\
+  = & \id & \text{Reflection law} \\
   \end{array}
   &
   \begin{array}{cll}
-    & id + id & \\
-  = & [ left \circ id, right \circ id ] & \text{Definition of $+$} \\
-  = & [ left, right] & \text{Definition of $id$} \\
-  = & id & \text{Reflection law} \\
+    & \id + \id & \\
+  = & [ left \circ \id, right \circ \id ] & \text{Definition of $+$} \\
+  = & [ left, right] & \text{Definition of $\id$} \\
+  = & \id & \text{Reflection law} \\
   \end{array}
 \end{array}
 \]
@@ -1804,7 +1804,7 @@ It's easy to prove this. We can chose any two products $(a, b)$ and $(c, d)$, su
 Although both are product functors, let's take some time to prove they are natural isomorphic. For the product of any two objects $A \times B$, as:
 
 \[
-swap_{A \times B} \circ swap_{B \times A} = id
+swap_{A \times B} \circ swap_{B \times A} = \id
 \]
 
 It tells us that $swap$ is an one to one mapping. It is isomorphic in the target category, hence proved the natural isomorphism.
@@ -1867,10 +1867,10 @@ Why are the initial and final objects symmetric? Suppose $S$ is the initial obje
 We only prove the isomorphic uniqueness for initial objects, the proof for final objects can be obtained through the symmetry.
 
 \begin{proof}
-Beside the initial object 0, suppose there is another initial object 0'. For the initial object 0, there must exist an arrow $f$ from 0 to 0' according to the definition of initial object; on the other hand, for the initial object 0', there must also exist an arrow $g$ from 0' to 0. According to the category axiom, there must be an identity arrow $id_0$ self-pointed to 0 (also called endo-arrow), and also an identity arrow $id_{0'}$ self-pointed to 0'. Since the identity arrow is unique, we have:
+Beside the initial object 0, suppose there is another initial object 0'. For the initial object 0, there must exist an arrow $f$ from 0 to 0' according to the definition of initial object; on the other hand, for the initial object 0', there must also exist an arrow $g$ from 0' to 0. According to the category axiom, there must be an identity arrow $\id_0$ self-pointed to 0 (also called endo-arrow), and also an identity arrow $\id_{0'}$ self-pointed to 0'. Since the identity arrow is unique, we have:
 
 \[
-  id_0 = f \circ g \quad \text{and} \quad id_{0'} = g \circ f
+  \id_0 = f \circ g \quad \text{and} \quad \id_{0'} = g \circ f
 \]
 
 This relation is illustrated in the below diagram.
@@ -1884,9 +1884,9 @@ This relation is illustrated in the below diagram.
     (m-1-1.north east) edge node [above] {$f$} (m-1-2.north west)
     (m-1-2.south west) edge node [below] {$g$} (m-1-1.south east);
   \draw[->]
-    (m-1-1.north west) arc[radius=5mm, start angle=45, end angle=315] node [pos=0.5, left] {$id_0$}; % (m-1-1.south west)
+    (m-1-1.north west) arc[radius=5mm, start angle=45, end angle=315] node [pos=0.5, left] {$\id_0$}; % (m-1-1.south west)
   \draw[->]
-    (m-1-2.south east) arc[radius=5mm, start angle=-135, end angle=135] node [pos=0.5, right] {$id_{0'}$}; % (m-1-2.north east);
+    (m-1-2.south east) arc[radius=5mm, start angle=-135, end angle=135] node [pos=0.5, right] {$\id_{0'}$}; % (m-1-2.north east);
 \end{tikzpicture}
 \end{center}
 
@@ -1935,7 +1935,7 @@ The composition results a zero arrow, it connects the three groups $G$, $\{e\}$,
  \label{fig:zero-obj}
 \end{figure}
 
-It does not matter what we call the only element in the trivial group. It can be $e$, can be 1 (the trivial subgroup of the multiplicative integer group for example), can be 0 (the trivial subgroup of the additive integer group for example), can be $I$ (the identity matrix of the multiplicative square matrix group for example), can be (1) (the identity transformation of the permutation group for example), can be $id$ ... They are all isomorphic equivalent.
+It does not matter what we call the only element in the trivial group. It can be $e$, can be 1 (the trivial subgroup of the multiplicative integer group for example), can be 0 (the trivial subgroup of the additive integer group for example), can be $I$ (the identity matrix of the multiplicative square matrix group for example), can be (1) (the identity transformation of the permutation group for example), can be $\id$ ... They are all isomorphic equivalent.
 \end{example}
 
 \begin{example}
@@ -1952,7 +1952,7 @@ However, here comes the problem: How to map the empty set $\varnothing$ to $\{ \
   \varnothing \arrowto{f} S
 \]
 
-Please take a while to think about this point. Let's consider the identity arrow $id$ of the empty set, $\varnothing \arrowto{id_{\varnothing}} \varnothing$. According to the category axiom, every object has $id$ arrow. The empty set is the object that has unique arrow to every set (include the empty set itself). The only special thing is that, the total function as the arrow has not any arguments. It can not be written as $f(x): x \mapsto y$.
+Please take a while to think about this point. Let's consider the identity arrow $\id$ of the empty set, $\varnothing \arrowto{\id_{\varnothing}} \varnothing$. According to the category axiom, every object has $\id$ arrow. The empty set is the object that has unique arrow to every set (include the empty set itself). The only special thing is that, the total function as the arrow has not any arguments. It can not be written as $f(x): x \mapsto y$.
 
 To answer the above question, since there is unique arrow from the empty set to any set, there is also unique arrow from empty set to $\{ \bigstar \}$. Hence there is unique arrow from every set (includes the empty set) to $\{ \bigstar \}$. Therefore, $\{ \bigstar \}$ is the final object in the category of set.
 
@@ -2046,7 +2046,7 @@ iso' :: Empty -> Void
 iso' _ = undefined
 \end{lstlisting}
 
-Here we explicitly define $iso$ and $iso'$ to form the isomorphism between \texttt{Empty} and $\texttt{Void}$. It is easy to verify that $iso \cdot iso' = id$.
+Here we explicitly define $iso$ and $iso'$ to form the isomorphism between \texttt{Empty} and $\texttt{Void}$. It is easy to verify that $iso \cdot iso' = \id$.
 
 In the category of sets, we define the arrow from the final object to any set as the selection arrow. What does it mean in programming? Set corresponds to type. It means we can select a specific value from any type. The below example selects 0 and 1 from $Int$ type respectively:
 
@@ -2188,7 +2188,7 @@ such that the below diagram commutes
      C^B & C^B \times B & C \\};
   \path[-stealth]
     (m-1-1) edge node [left] {$\lambda g$} (m-2-1)
-    (m-1-2) edge node [left] {$\lambda g \times id_B$} (m-2-2)
+    (m-1-2) edge node [left] {$\lambda g \times \id_B$} (m-2-2)
     (m-1-2) edge node [above] {$g$} (m-2-3)
     (m-2-2) edge node [below] {$apply$} (m-2-3);
 \end{tikzpicture}
@@ -2197,7 +2197,7 @@ such that the below diagram commutes
 That is:
 
 \[
-  apply \circ (\lambda g \times id_B) = g
+  apply \circ (\lambda g \times \id_B) = g
 \]
 
 \end{definition}
@@ -2216,16 +2216,16 @@ curry\ g = \lambda g
 Therefore, $curry\ g$ is the exponential transpose of $g$. Substitute this definition into the above diagram, we have:
 
 \[
-  apply \circ (curry\ g \times id) = g
+  apply \circ (curry\ g \times \id) = g
 \]
 
 In other words, we obtain such a universal property:
 
 \[
-  f = curry\ g \quad \equiv \quad apply \circ (f \times id) = g
+  f = curry\ g \quad \equiv \quad apply \circ (f \times \id) = g
 \]
 
-And we can also see why the exponential transpose arrow is unique. Suppose there exists another arrow $A \arrowto{h} C^B$, such that $apply \circ (h \times id) = g$. According to the above universal property, we immediately get $h = curry\ g$.
+And we can also see why the exponential transpose arrow is unique. Suppose there exists another arrow $A \arrowto{h} C^B$, such that $apply \circ (h \times \id) = g$. According to the above universal property, we immediately get $h = curry\ g$.
 
 We can also consider the exponentials as a category. Given a category $\pmb{C}$, when fix object $B, C$, we can form a category $\pmb{Exp}$. In this category, all objects are arrows in the form of $A \times B \to C$, and the arrows are defined as:
 
@@ -2251,24 +2251,24 @@ If there is arrow $A \arrowto{f} D$ in category $\pmb{C}$, then the arrow in $\p
      D & D \times B & C \\};
   \path[-stealth]
     (m-1-1) edge node [left] {$f$} (m-2-1)
-    (m-1-2) edge node [left] {$f \times id_B$} (m-2-2)
+    (m-1-2) edge node [left] {$f \times \id_B$} (m-2-2)
     (m-1-2) edge node [above] {$h$} (m-2-3)
     (m-2-2) edge node [below] {$k$} (m-2-3);
 \end{tikzpicture}
 \end{center}
 
-The diagram commutes when $k \circ (f \times id_B) = h$. There exists the final object in category $\pmb{Exp}$, which exactly is $C^B \times B \arrowto{apply} C$. Let's verify it. According to the definition of exponential, from any object $A \times B \arrowto{g} C$, there is $apply$ arrow $\lambda g = curry\ g$. On the other hand, the endo arrow to the final object must be $id$, hence we obtain the {\em reflection law}:
+The diagram commutes when $k \circ (f \times \id_B) = h$. There exists the final object in category $\pmb{Exp}$, which exactly is $C^B \times B \arrowto{apply} C$. Let's verify it. According to the definition of exponential, from any object $A \times B \arrowto{g} C$, there is $apply$ arrow $\lambda g = curry\ g$. On the other hand, the endo arrow to the final object must be $\id$, hence we obtain the {\em reflection law}:
 
 \[
-curry\ apply = id
+curry\ apply = \id
 \]
 
 \begin{Exercise}
-\Question{Verify that $\pmb{Exp}$ is a category. What is the $id$ arrow and arrow composition in it?}
-\Question{In the reflection law $curry\ apply = id$, what is the subscript of the $id$ arrow? Please prove it with another method.}
+\Question{Verify that $\pmb{Exp}$ is a category. What is the $\id$ arrow and arrow composition in it?}
+\Question{In the reflection law $curry\ apply = \id$, what is the subscript of the $\id$ arrow? Please prove it with another method.}
 \Question{We define the equation
 \[
-(curry\ f) \circ g = curry(f \circ (g \times id))
+(curry\ f) \circ g = curry(f \circ (g \times \id))
 \]
 as the fusion law for Currying. Draw the diagram and prove it.}
 \end{Exercise}
@@ -2441,7 +2441,7 @@ The exponential $(A \times B)^C$ is the set of arrows of $C \to A \times B$. It 
 The arithmetic we introduced applies to objects in Cartesian closed categories. What if we take functors into consideration? As functors apply to both objects and arrows, it leads to the concept of polynomial functors. A polynomial functor is built from constant functors (refer to \hyperref[sec:functor:examples]{The `black hole' functor example}), product functors, and coproduct functors recursively.
 
 \begin{itemize}
-  \item The identity functor $id$, and constant functor $\mathbf{K}_A$ are polynomial functors;
+  \item The identity functor $\id$, and constant functor $\mathbf{K}_A$ are polynomial functors;
   \item if functor $\mathbf{F}$ and $\mathbf{G}$ are polynomial functors, then their composition $\mathbf{FG}$, sum $\mathbf{F} + \mathbf{G}$, and product$\mathbf{F} \times \mathbf{G}$ are also polynomial functors. Where the sum and product are defined as below:
   \[
     \begin{array}{l}
@@ -2456,14 +2456,14 @@ For example, if functor $\mathbf{F}$ is defined as below for objects and arrows:
 \[
 \begin{cases}
 \text{Object:}\ & \mathbf{F} X = A + X \times A \\
-\text{Arrows:}\ & \mathbf{F} h = id_A + h \times id_A
+\text{Arrows:}\ & \mathbf{F} h = \id_A + h \times \id_A
 \end{cases}
 \]
 
 Where $A$ is some fixed object. Then functor $\mathbf{F}$ is a polynomial functor. It can be represented as a polynomial:
 
 \[
-\mathbf{F} = \mathbf{K}_A + (id \times \mathbf{K}_A)
+\mathbf{F} = \mathbf{K}_A + (\id \times \mathbf{K}_A)
 \]
 
 \subsection{F-algebra}
@@ -2519,8 +2519,8 @@ In the second step, we remove all the concrete elements like $x$, $y$, $z$, and 
 
 \[
 \begin{cases}
-\text{Associativity:} & m \circ (m, id) = m \circ (id, m) \\
-\text{Identity element:：} & m \circ (id, e) = m \circ (e, id) = id \\
+\text{Associativity:} & m \circ (m, \id) = m \circ (\id, m) \\
+\text{Identity element:：} & m \circ (\id, e) = m \circ (e, \id) = \id \\
 \end{cases}
 \]
 
@@ -2649,9 +2649,9 @@ In the second step, we remove the concrete elements $x$, $y$, $z$, and set $G$ t
 
 \[
 \begin{cases}
-\text{Associativity:} & m \circ (m, id) = m \circ (id, m) \\
-\text{Identity element:} & m \circ (id, e) = m \circ (e, id) = id \\
-\text{Reverse element:} & m \circ (id, i) = m \circ (i, id) = e \\
+\text{Associativity:} & m \circ (m, \id) = m \circ (\id, m) \\
+\text{Identity element:} & m \circ (\id, e) = m \circ (e, \id) = \id \\
+\text{Reverse element:} & m \circ (\id, i) = m \circ (i, \id) = e \\
 \end{cases}
 \]
 
@@ -2759,7 +2759,7 @@ respectively.
 \Question{Draw the diagram to illustrate the reverse element axiom for group.}
 \Question{Let $p$ be a prime. Use the F-algebra to define the $\alpha$ arrow for the multiplicative group for integers modulo $p$ (refer to the previous chapter for the definition of this group).}
 \Question{Define F-algebra for ring (refer to the previous chapter for definition of ring).}
-\Question{What is the $id$ arrow for F-algebra category? What is the arrow composition?}
+\Question{What is the $\id$ arrow for F-algebra category? What is the arrow composition?}
 \end{Exercise}
 
 \subsubsection{Recursion and fixed point}
@@ -2930,16 +2930,16 @@ To make it obvious, we draw the second section in top-down direction:
 \end{tikzpicture}
 \end{center}
 
-Compare with the above diagram, we find the directions of $i$ and $j$ are reversed. Composite the two together, we obtain an endo-arrow from $I$ to itself. As the only endo-arrow of the initial object is $id$, therefore:
+Compare with the above diagram, we find the directions of $i$ and $j$ are reversed. Composite the two together, we obtain an endo-arrow from $I$ to itself. As the only endo-arrow of the initial object is $\id$, therefore:
 
 \[
-i \circ j = id
+i \circ j = \id
 \]
 
-We can use the similar analysis for $\mathbf{NatF}I$. Since the arrow from the initial object to the recursive object is unique, the arrow $i$ from $\mathbf{NatF}I$ to $I$, connected with the arrow $j$ back to $\mathbf{NatF}I$ must also be $id$
+We can use the similar analysis for $\mathbf{NatF}I$. Since the arrow from the initial object to the recursive object is unique, the arrow $i$ from $\mathbf{NatF}I$ to $I$, connected with the arrow $j$ back to $\mathbf{NatF}I$ must also be $\id$
 
 \[
-j \circ i = id_{\mathbf{NatF}I}
+j \circ i = \id_{\mathbf{NatF}I}
 \]
 
 It means $\mathbf{NatF}I$ is isomorphic to $I$.
@@ -3083,8 +3083,8 @@ The catamorphism make this diagram commute.
 %\def\arraystretch{2.2}
 \begin{array}{rll}
             & h \circ [zero, succ] = [c, f] \circ \mathbf{NatF}(h) & \text{Commute} \\
-\Rightarrow & h \circ [zero, succ] = [c, f] \circ (id + h) & \text{Polynomial functor} \\
-\Rightarrow & h \circ [zero, succ] = [c \circ id, f \circ h] & \text{Absorption law for coproduct on the right} \\
+\Rightarrow & h \circ [zero, succ] = [c, f] \circ (\id + h) & \text{Polynomial functor} \\
+\Rightarrow & h \circ [zero, succ] = [c \circ \id, f \circ h] & \text{Absorption law for coproduct on the right} \\
 \Rightarrow & [h \circ zero, h \circ succ] = [c, f \circ h] & \text{Fusion law of coproduct on the left} \\
 \Rightarrow &
   \begin{cases}
@@ -3218,18 +3218,18 @@ sum = cata sumAlg where
   sumAlg (ConsF x y) = x + y
 \end{lstlisting}
 
-Next we use list diagram to prove, the catamorphism on list is the folding computation $foldr$ essentially. List functor is a polynomial functor. When fix $A$, for carrier object $B$, it sends to $\mathbf{ListF}\ A\ B = 1 + A \times B$; for arrow $h$, it sends to $(\mathbf{ListF}\ A)(h) = id + (id \times h)$. As the diagram commutes, we have:
+Next we use list diagram to prove, the catamorphism on list is the folding computation $foldr$ essentially. List functor is a polynomial functor. When fix $A$, for carrier object $B$, it sends to $\mathbf{ListF}\ A\ B = 1 + A \times B$; for arrow $h$, it sends to $(\mathbf{ListF}\ A)(h) = \id + (\id \times h)$. As the diagram commutes, we have:
 
 \[
 \begin{array}{rll}
             & h \circ [nil, cons] = [c, f] \circ (\mathbf{ListF}\ A)(h) & \text{Commute} \\
-\Rightarrow & h \circ [nil, cons] = [c, f] \circ (id + (id \times h)) & \text{Polynomial functor} \\
-\Rightarrow & h \circ [nil, cons] = [c \circ id, f \circ (id \times h)] & \text{Absorption law of coproduct on the right} \\
-\Rightarrow & [h \circ nil, h \circ cons] = [c, f \circ (id \times h)] & \text{Fusion law of coproduct on the left} \\
+\Rightarrow & h \circ [nil, cons] = [c, f] \circ (\id + (\id \times h)) & \text{Polynomial functor} \\
+\Rightarrow & h \circ [nil, cons] = [c \circ \id, f \circ (\id \times h)] & \text{Absorption law of coproduct on the right} \\
+\Rightarrow & [h \circ nil, h \circ cons] = [c, f \circ (\id \times h)] & \text{Fusion law of coproduct on the left} \\
 \Rightarrow &
   \begin{cases}
     h \circ nil = c \\
-    h \circ cons = f \circ (id \times h) \\
+    h \circ cons = f \circ (\id \times h) \\
   \end{cases} & \\
 \\
 \Rightarrow &
@@ -3305,20 +3305,20 @@ sum = cata \circ sumAlg \\
 \end{array}
 \]
 
-Next, we prove the catamorphism is the essentially the folding operation $foldt$ for binary tree. Fix object $A$, the binary tree functor $\mathbf{TreeF}\ A\ B$ is a polynomial functor. For a given carrier object $B$, it sends to $\mathbf{TreeF}\ A\ B = 1 + (A \times B \times B)$; for arrow $h$, it sends to $(\mathbf{TreeF}\ A)(h) = id + (id_A \times h \times h)$.
+Next, we prove the catamorphism is the essentially the folding operation $foldt$ for binary tree. Fix object $A$, the binary tree functor $\mathbf{TreeF}\ A\ B$ is a polynomial functor. For a given carrier object $B$, it sends to $\mathbf{TreeF}\ A\ B = 1 + (A \times B \times B)$; for arrow $h$, it sends to $(\mathbf{TreeF}\ A)(h) = \id + (\id_A \times h \times h)$.
 
 Since the diagram commutes, we have:
 
 \[
 \begin{array}{rll}
             & h \circ [nil, branch] = [c, f] \circ (\mathbf{TreeF}\ A)(h) & \text{Commute} \\
-\Rightarrow & h \circ [nil, branch] = [c, f] \circ (id + (id_A \times h \times h)) & \text{Polynomial functor} \\
-\Rightarrow & h \circ [nil, branch] = [c \circ id, f \circ (id_A \times h \times h)] & \text{Absorption law of coproduct on the right} \\
-\Rightarrow & [h \circ nil, h \circ branch] = [c, f \circ (id_A \times h \times h)] & \text{Fusion law of coproduct on the left} \\
+\Rightarrow & h \circ [nil, branch] = [c, f] \circ (\id + (\id_A \times h \times h)) & \text{Polynomial functor} \\
+\Rightarrow & h \circ [nil, branch] = [c \circ \id, f \circ (\id_A \times h \times h)] & \text{Absorption law of coproduct on the right} \\
+\Rightarrow & [h \circ nil, h \circ branch] = [c, f \circ (\id_A \times h \times h)] & \text{Fusion law of coproduct on the left} \\
 \Rightarrow &
   \begin{cases}
     h \circ nil = c \\
-    h \circ branch = f \circ (id_A \times h \times h) \\
+    h \circ branch = f \circ (\id_A \times h \times h) \\
   \end{cases} & \\
 \\
 \Rightarrow &
@@ -3407,7 +3407,7 @@ foldMap\ g = concat_M \circ fmap\ g
 \end{array}
 \]
 
-However, there is still limitation. For the binary operation $f : A \to B \to B$ passed to $foldr$, if $B$ is not monoid, we can't do folding. To solve it, consider the Curried $f$ of $f : A \to (B \to B)$. When we treat the arrow $B \to B$ as object, they can form a monoid. Where the identity element is the $id$ arrow, and the binary operation is arrow composition. To make it clear, we wrap the $B \to B$ arrow as a type (set) through a functor:
+However, there is still limitation. For the binary operation $f : A \to B \to B$ passed to $foldr$, if $B$ is not monoid, we can't do folding. To solve it, consider the Curried $f$ of $f : A \to (B \to B)$. When we treat the arrow $B \to B$ as object, they can form a monoid. Where the identity element is the $\id$ arrow, and the binary operation is arrow composition. To make it clear, we wrap the $B \to B$ arrow as a type (set) through a functor:
 
 \lstset{frame=none}
 \begin{lstlisting}[style=Haskell]
@@ -3420,7 +3420,7 @@ We name it as `endo' functor as it point to $B$ from $B$ itself. Besides, we als
 appEndo(Endo\ a) = a
 \]
 
-Now we can declare $\mathbf{Endo}$ is a monoid, with $id$ arrow as the identity element, and function composition as the binary operation.
+Now we can declare $\mathbf{Endo}$ is a monoid, with $\id$ arrow as the identity element, and function composition as the binary operation.
 
 \lstset{frame=single}
 \begin{lstlisting}[style=Haskell]
@@ -3442,8 +3442,8 @@ When compute $foldCompose\ f\ [a, b, c]$, it will be expanded as the following:
 
 \[
 \begin{array}{cl}
-  & Endo(f\ a) \oplus (Endo(f\ b) \oplus (Endo(f\ c) \oplus Endo(id))) \\
-= & Endo(f\ a \oplus (f\ b \oplus (f\ c \oplus id))
+  & Endo(f\ a) \oplus (Endo(f\ b) \oplus (Endo(f\ c) \oplus Endo(\id))) \\
+= & Endo(f\ a \oplus (f\ b \oplus (f\ c \oplus \id))
 \end{array}
 \]
 

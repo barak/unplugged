@@ -647,7 +647,7 @@ Hence we proved foldr/build fusion law for list with category theory\cite{Hinze-
 \begin{Exercise}
 \Question{Verify that folding from left can also be defined with $foldr$:
 \[
-foldl\ f\ z\ xs = foldr\ (b\ g\ a \mapsto g\ (f\ a\ b))\ id\ xs\ z
+foldl\ f\ z\ xs = foldr\ (b\ g\ a \mapsto g\ (f\ a\ b))\ \id\ xs\ z
 \]}
 \Question{Prove the below build...foldr forms hold:
 \[
@@ -733,7 +733,7 @@ eval = sum \circ map\ (product \circ (map\ dec))
 Obviously, this definition can be optimized with the fusion law. We leave the detailed deduction as the exercise, and directly give the result here:
 
 \[
-eval = foldr\ (t\ ts \mapsto (foldr\ ((\times) \circ fork(dec, id))\ 1\ t) + ts)\ 0
+eval = foldr\ (t\ ts \mapsto (foldr\ ((\times) \circ fork(dec, \id))\ 1\ t) + ts)\ 0
 \]
 
 Where $fork(f, g)\ x = (f\ x, g\ x)$. It applies two functions to a given variable separately, and forms a pair. From this result, we can write a definition with both good performance and readability:
